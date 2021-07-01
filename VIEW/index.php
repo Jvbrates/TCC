@@ -1,9 +1,10 @@
 <?php
-include "../CONTROLLER/connectionDB.php";
+require '../Routes/autoload.php';
 
-$tst = ConnectionDB::getConnection();
-$r = $tst->query("SHOW tables;");
+error_log("autoload feito ");
 
-$dados = $r->fetchAll(PDO::FETCH_ASSOC);
-        //print_r( $dados);
-        print_r($dados);
+$m = new Routes();
+
+error_log("Routes() feito ");
+
+?>
