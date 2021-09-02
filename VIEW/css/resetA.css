@@ -1,0 +1,48 @@
+/* link que ainda não foi acessado */
+a {
+    color: #1E2D4A;
+    text-decoration: none;
+ }
+ /* link que foi visitado */
+ a:visited {
+     color: #1E2D4A;
+ }
+ /* quando o ponteiro do mouse passa no link */
+ a:hover {
+     color: #273a61;
+ }
+ /* quando o link for selecionado */
+ a:active {
+     color: #273a61;
+ }
+
+ textarea:focus, 
+textarea.form-control:focus, 
+input.form-control:focus, 
+input[type=text]:focus, 
+input[type=password]:focus, 
+input[type=email]:focus, 
+input[type=number]:focus, 
+[type=text].form-control:focus, 
+[type=password].form-control:focus, 
+[type=email].form-control:focus, 
+[type=tel].form-control:focus, 
+[contenteditable].form-control:focus {
+  box-shadow: inset 0 -1px 0 #ddd;
+  border-bottom: none;
+  border-color: #e0e4e7;
+}
+
+button:focus,
+button:hover, button:active {
+    box-shadow: inset 0 -1px 0 #ddd;
+}
+
+.btn:active,
+.btn:focus,
+.btn.active {
+  background-image: none;
+  outline: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}

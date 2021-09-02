@@ -1,6 +1,6 @@
 <?php 
 //Excluir a necessidade de estar massivamente requerendo classes
-echo("SPL funciona?");
+//echo("SPL funciona?");
 spl_autoload_register(
     function($filename)
     {

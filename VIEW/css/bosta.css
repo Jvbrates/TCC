@@ -1,0 +1,13 @@
+main {
+    padding-top: 50px;
+}
+
+svg {
+    color: white;
+}
+
+nav {
+    background-color: #e1e1e1;
+    border-bottom:solid #ff7300 4px!important;
+    padding-bottom: 4px!important;
+}

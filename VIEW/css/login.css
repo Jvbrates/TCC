@@ -1,0 +1,133 @@
+:root 
+{
+    --cor_fundo: #E1E1E1;
+    --cor_destaque: #ff7300;
+    --cor_secundaria: #FFFFFF;
+    --link-color-hover: #ec5840;
+}
+
+    /*Cores Ligh mode */
+    *[class*="col-sm"], .row, body {    background-color: var(--cor_fundo);     }
+    .form-wrapper 
+{
+    background-color: var(--cor_secundaria);
+    box-shadow: 0px 5px 5px 6px rgba(0, 0, 0, 0.3);
+}
+
+    button:not(.close)
+{
+    transition: 2s!important;
+    background: #FFFFFF;
+    border-color: black!important;
+}
+
+   button:active:not(.close), button:hover:not(.close)
+{
+    border-color: var(--cor_destaque)!important;
+    transition: 1s;
+}
+
+    input 
+{
+    background: rgba(196, 196, 196, 0.15)!important;
+} 
+
+    input:focus 
+{
+    transition: 1s;
+    border-bottom: solid var(--cor_destaque) 1px!important ;
+}
+
+    .hr {    border: 1px solid var(--cor_destaque);    }
+
+    .cred 
+{
+    background: rgba(0, 0, 0, 0.7);
+    color: azure;
+}
+
+    /*Cores Dark mode */
+
+
+
+
+
+    /* Outras configurações */
+
+#alert_wrapper {
+    padding-top: 5px;
+    margin-bottom: -5px;
+}
+
+img {    height: 100vh;    }
+
+
+.form-container {
+    display: flex;
+ }
+
+ .form-wrapper {
+    max-width: 90%;
+    min-width: 70%;
+    border-radius: 10px;
+    
+    margin: auto;
+    margin-top: 2vh;
+    padding: 50px;
+    padding-bottom: 0px;
+    margin-bottom: 15px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-start;
+    
+    
+    text-align: center;
+   
+}
+
+
+
+.form-wrapper * {
+    margin: 15px ;
+}
+
+
+button {
+    width: 118px;
+    padding: 5px;
+    border-radius: 75px!important;
+    font-weight: bold;
+}
+
+
+input { 
+    border-radius: 50px!important;
+    text-align: center;
+    margin: 20px 0px!important;
+}
+
+
+.hr 
+{
+    position: relative;
+    top: -40px;
+}
+
+#img-login {
+    position: relative;
+}
+
+.cred {
+    display: none;
+}
+#img-login:hover .cred {
+    display: block;
+}
+
+.cred {
+  padding-left: 20px;
+  position: absolute;
+  bottom: 0;
+  border-top-right-radius: 4px;
+}
