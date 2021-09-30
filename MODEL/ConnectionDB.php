@@ -1,40 +1,32 @@
 <?php
 
-Class ConnectionDB
+class ConnectionDB
 {
-    private static $instance; 
+    private static $instance;
 
-    public static function getConnection() {
-        
-        if(!isset(self::$instance))
-        {
+    public static function getConnection()
+    {
 
-            
-            $name = 'DBTCC'; 
+        if (!isset(self::$instance)) {
+
+
+            $name = 'DBTCC';
             $host = 'localhost';
             $user = 'root';
             $senha = '2318';
             try {
 
-                self::$instance = new PDO("mysql:dbname=".$name.";host=".$host, $user, $senha);
-
+                self::$instance = new PDO("mysql:dbname=" . $name . ";host=" . $host, $user, $senha);
             } catch (Exception $e) {
 
-                echo '<script>alert("erro: '.$e.'")</script>';
+                echo $e->getMessage();
                 echo "deu erro";
-            }    
+            }
         }
         return self::$instance;
     }
-    
-
-  
-
-
 }
 
 $conexão  = ConnectionDB::getConnection();
-
-
 
 ?>

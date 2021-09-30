@@ -1,0 +1,64 @@
+  main{
+    width: 80%;
+    margin: auto;
+    padding-top: 10vh;
+  }
+#map {
+    height: 500px;
+    width: 500px;
+  }
+  
+  /* Optional: Makes the sample page fill the window. */
+  html,
+  body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+
+  #infoboxdiv{
+    
+    
+    margin-bottom: 10px;
+    opacity: 1;
+    
+    transition: .6s ease opacity,.6s ease transform;
+  }
+
+  input[type=textarea]#sobre {
+    height: 50px;
+    min-height: 50px;
+    resize:none;
+    background-color: black;
+    }
+textarea {
+  resize: none;
+  margin-bottom: 5px;
+}
+
+  input {
+    margin: 10px;
+  }
+
+  .coordenadas {
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+    flex-direction: column-reverse;  
+  }
+
+
+
+  #lat, #long{
+    width: 50%;
+    position:relative;
+    right: 50%;
+  }
+
+  .coordenadas btn{
+    align-self: flex-end;
+  }
+
+
+  

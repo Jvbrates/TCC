@@ -1,0 +1,58 @@
+<form id="formLogin" method="POST" action="http://localhost/TCC/instituicoes/edit">
+    <div class="row">
+        <div class="form-group col-xl-12">
+            <label for="nomeInstituicao">Nome da Instituição:</label>
+            <input type="text" class="form-control" name="nomeInstituicao" placeholder="Nome">
+        </div>
+        <hr>
+    </div>
+    <div class="row">
+        <label for="Conratos">Contatos:</label>
+        <div class="form-group col-xl">
+            <input type="text" class="form-control" name="fone" placeholder="Telefone">
+        </div>
+        <div class="form-group col-xl">
+            <input type="email" class="form-control" name="emailInstituicao" placeholder="Email">
+        </div>
+        <div class="form-group col-xl">
+            <input type="text" class="form-control" id="Site" name="site" placeholder="Site">
+        </div>
+    </div>
+    <div class="row">
+        <label for="">Endereço: </label>
+        <div class="form-group col-xl">
+            <input type="text" class="form-control" id="Endereço"name="endereco" placeholder="Endereço">
+        </div>
+    </div>
+    <div class="row">
+        <label for="">Sobre: </label>
+        <div class=" col-xl">
+            <textarea id="sobre" class="form-control" name="Sobre" placeholder="Sobre"></textarea>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xl">
+            <div id="map"></div>
+        </div>
+        <div class="col-xl coordenadas">
+            <button class="btn btn-success" type="button" onclick="envia()">Atualizar Dados</button>
+
+            <input type="text" id='Latitude'  name="lat" class="form-control" readonly placeholder="Latitude">
+
+            <input type="text" class="form-control" name="long" id="Longitude" readonly placeholder="Longitude">
+
+        </div>
+    </div>
+
+</form>
+
+<!---< Carregar Modulo de funções para carregar CSS>-->
+
+<script type="module">
+import {loadCSS} from '/TCC/VIEW/js/funcoes.js';
+loadCSS("css/newInstituicoes.css");
+</script>
+
+<!----Para usar google maps api -->
+<script src="js/updateInstituicoes.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAzSXiSHwnpvLLWATkHSHvMzuAblvSR_co&libraries=visualization&callback=initMap&language=pt"></script>

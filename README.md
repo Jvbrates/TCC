@@ -39,3 +39,4 @@ template9.php >=> usuario nao logado
 template1.php >=> gerenciador logado
 template2.php >=> administrador logado 
         
+TODO avaliar Criação de uma model só para requisições

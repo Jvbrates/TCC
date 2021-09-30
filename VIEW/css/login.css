@@ -7,7 +7,7 @@
 }
 
     /*Cores Ligh mode */
-    *[class*="col-sm"], .row, body {    background-color: var(--cor_fundo);     }
+    *[class*="col-sm"], main, body {    background-color: var(--cor_fundo);     }
     .form-wrapper 
 {
     background-color: var(--cor_secundaria);

@@ -25,7 +25,7 @@ formulario.addEventListener('submit', function (s) {
                 formulario.submit();
             } else if (response.status == 401) {
                 alertDiv.innerHTML = "<div class='alert alert-warning alert-dismissible fade show' id='alerta' role='alert'><span type='button' class='close' data-bs-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></span><strong>Atenção!</strong> Usuário ou senha incorretos.</div> ";
-
+            
             } else { console.log(response.status) }
         })
 

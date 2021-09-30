@@ -1,35 +1,50 @@
 <?php
 
-class controller{
+class controller
+{
     public $dados = array();
 
-    public function carregarTemplate($viewName, ...$dados)
+
+    //Carrega o template, o arquivo recebera o nome de 'template' mais a variavel dados[0]
+    public function carregarTemplate($viewName,$dados, $toJavascript = null )
     {
         $this->dados = $dados;
         //echo ' carregar template->';
-        require '../VIEW/template'.$dados[0].'.php';
-
-        
+        require '../VIEW/template' . $dados . '.php';
     }
 
-    public function carregarViewinTemplate($viewName, $dados)
+    //Chamado de dentro do template carrega a página em si:
+    public function carregarViewinTemplate($viewName, $dados, $toJavascript = null)
     {
-        require '../VIEW/'.$viewName.'.php';
-        
-        
+        echo "<!----Variavel carregada estaticamente pelo servidor--->";
+       
+        if(isset($toJavascript)){
+            controller::toJavascript($toJavascript);
+        }
+        if (file_exists('../VIEW/' . $viewName . '.php')) {
+            require '../VIEW/' . $viewName . '.php';
+        } else {
+            require '../VIEW/' . $viewName . '.html';
+        }
     }
 
-    protected static function verifica(...$variaveis) //retorna false caso pelo menos uma das variaveis passadas não exista eu seja vazia
-    {//Verifica Empty e Isset
+    //Verifica se as variaveis Existem
+    public static function verifica(...$variaveis) //retorna false caso pelo menos uma das variaveis passadas não exista eu seja vazia
+    { //Verifica Empty e Isset
         foreach ($variaveis as $variavel) {
 
-            if(empty($variavel)) {
+            if (empty($variavel)) {
                 return false;
             }
-            
+
             return true;
         }
-    } 
-}
+    }
 
-?>
+    static function toJavascript(array $array){
+        echo '<script>';
+        echo 'variavel = ';
+        echo (json_encode($array, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE));
+        echo '</script>';
+    }
+}

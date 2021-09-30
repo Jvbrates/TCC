@@ -44,8 +44,8 @@
           <button name="login" id="login" class="btn">ENTRAR</button>
         </form>
 
-        <a href="#!" id="r_senha">Recuperar senha</a><br>
-        <a href="#!" id="cadastro">Ainda não possui login? Cadastrar-se</a></p>
+        <a href="http://localhost/TCC/login/cadastro" id="r_senha">Recuperar senha</a><br>
+        <a href="http://localhost/TCC/login/cadastro" id="cadastro">Ainda não possui login? Cadastrar-se</a></p>
       </div>
     </div>
 

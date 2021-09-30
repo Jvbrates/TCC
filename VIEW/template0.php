@@ -8,11 +8,11 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <base href="http://localhost/TCC/VIEW/" target="_self">
-    <link href="css/bosta.css" type="text/css" rel="stylesheet">
+    <link href="css/template.css" type="text/css" rel="stylesheet">
     <!-- CSS próprio-->
    
 
-    <title>Início</title>
+    <title>Sistema</title>
   </head>
 
 
@@ -24,7 +24,7 @@
   <div class="container-fluid">
     <!---Logo e nome do sistema com link para a página inicial-->
     <a class="navbar-brand" aria-current="page" href="http://localhost/TCC/home">
-    <img src="https://getbootstrap.com/docs/5.0/assets/brand/bootstrap-logo.svg" alt="" width="30" height="24" class="d-inline-block align-text-top">
+    <img src="https://getbootstrap.com/docs/5.0/assets/brand/bootstrap-logo.svg" alt="" width="36" height="24" class="d-inline-block align-text-top">
               Sistema
     </a>
 
@@ -60,12 +60,12 @@
     <!-- Carregamento da página dentro do template-->
     <main class="p-10">
 
-    <?php $this->carregarViewinTemplate($viewName, $dados);?>
+    <?php $this->carregarViewinTemplate($viewName, $dados, $toJavascript);?>
     </main>
 
     <!-- Bootstrap Bundle e Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
-    template 0 ==> usuário logado
+    tipo 0 ==> usuário logado
   </body>
 </html>
 
