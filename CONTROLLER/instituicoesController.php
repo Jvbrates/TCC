@@ -28,12 +28,11 @@ class instituicoesController extends controller
         echo (json_encode($a->getFull($id), JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE));
     }
 
-    public function dell($id) //Deleta a Instituição
+    public function dell() //Deleta a Instituição Anti CSRF?
     {
         loginController::redirectLogin(1, 2);
         $a = new instituicaoCon();
-        $a->dell($id[0]);
-        header('location: http://localhost/TCC/instituicoes/admin');
+        $a->dell($_POST['id']);
         exit();
     }
 

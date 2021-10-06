@@ -1,4 +1,3 @@
 <?php
 
-$a = new DateTime('now');
-echo $a->getTimestamp();
+print_r( $_POST);

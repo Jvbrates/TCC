@@ -32,8 +32,8 @@ class homeController extends controller{
         //$a = new testeconexao();
         //$dados = $a->listatab();
         
-        $this->carregarTemplate(__FUNCTION__, loginController::getTipo());
-        include '../VIEW/henrique.php'  ;
+        
+        include '../VIEW/testededados.php'  ;
     }
 }   
 

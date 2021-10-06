@@ -5,13 +5,13 @@ class loginController extends controller
 
     public function login()
     {
-        include "../VIEW/" . __FUNCTION__ . ".php";
+        include "../VIEW/" . __FUNCTION__ . ".html";
     }
 
     //Carrega a página de Cadastro
     public function cadastro()
     {
-        include "../VIEW/" . __FUNCTION__ . ".php";
+        include "../VIEW/" . __FUNCTION__ . ".html";
     }
 
     //Realizar o logoff, para isso apaga as variaveis 
@@ -92,6 +92,7 @@ class loginController extends controller
     public function setCadastro()
     {
         $l = new loginCon;
+        
         if($l->setCadastro(parametros: $_POST)){
             
             $_SESSION['user'] = $_POST['user'];
