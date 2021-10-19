@@ -8,7 +8,6 @@ class instituicoesController extends controller
 
         $loginTipo = loginController::getTipo();
         loginController::redirectLogin(1, 2);
-
         $this->carregarTemplate(__FUNCTION__, $loginTipo);
     }
 

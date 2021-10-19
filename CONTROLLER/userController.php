@@ -9,8 +9,10 @@ class userController extends controller
         $loginTipo = loginController::getTipo();
         loginController::redirectLogin(2);
         $a = new userModel();
+        
 
         $this->carregarTemplate(__FUNCTION__, $loginTipo, $a->getAll());
+        
     }
 
     public function dell() //Deleta a Instituição Anti CSRF?

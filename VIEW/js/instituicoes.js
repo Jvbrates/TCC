@@ -22,7 +22,7 @@ const tbody = table.createTBody();
 
 
 let a = function () {
-    fetch('http://localhost/TCC/instituicoes/getAll/')
+    fetch('http://localhost/TCC/instituicoes/getAll/',{ credentials:"same-origin"})
         .then(function (json) {
             return json.json();
 

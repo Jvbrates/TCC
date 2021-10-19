@@ -36,9 +36,11 @@ class loginController extends controller
         if ($l->setLogin(parametros: $_POST)) {
             header("HTTP/1.1 200 OK");
             echo (json_encode('user:' . 'logado'));
+            print_r($_SESSION);
             exit();
         } else {
             header("HTTP/1.1 401 ");
+            print_r($_SESSION);
             echo (json_encode('user:' . 'nao logado'));
             exit();
         }

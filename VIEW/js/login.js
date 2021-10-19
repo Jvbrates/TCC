@@ -15,7 +15,7 @@ formulario.addEventListener('submit', function (s) {
     fetch('http://localhost/TCC/login/setLogin', {
         method: 'POST',
         body: dados,
-
+          
     })
 
         .then(function (response) {

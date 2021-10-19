@@ -1,0 +1,83 @@
+<script type="module" src="../VIEW/js/newcurso.js"></script>
+
+<form method="POST" action="http://localhost/TCC/cursos/cad">
+  <label>Nome do Curso:</label>
+  <input type="text" name="nomeCurso"><br>
+  <label>Descrição</label>
+  <textarea name="descricaoCurso" id="" cols="30" rows="10"></textarea>
+  <br>
+  <label>Modalidade</label><br>
+  <div class="form-check">
+    <label class="form-check-label">
+      <input checked type="radio" class="form-check-input" name="modalidadeCurso" value="0">
+      Presencial
+    </label><br>
+    <label class="form-check-label">
+      <input type="radio" class="form-check-input" name="modalidadeCurso" value="1">
+      Ensino a Distância (EAD)
+    </label>
+  </div>
+  <!---Selecionar EAD e logo turno flexivel seria interessante-->
+  <div class="form-group">
+    <label for="">Turno</label>
+    <select class="form-control" name="turno" >
+      <option value="0">Manhã</option>
+      <option value="1">Tarde</option>
+      <option value="2">Noite</option>
+      <option value="3">Integral Matutino</option>
+      <option value="4">Integral Vespertino</option>
+      <option value="5">Flexivel</option>
+
+    </select>
+  </div>
+
+  <div class="row form-group">
+    <label>Duração</label>
+    <div class="col">
+      <input type="number" name="duracaoCurso">
+      <div class="d-inline-block">
+        <select class="form-control form-control-sm" name="tipoDuracaoCurso">
+          <option value="0">Horas</option>
+        </select>
+      </div>
+    </div>
+
+  </div>
+
+
+  </div>
+
+  <div class="row">
+    <div class="col ">
+
+      <label class="d-block" for="">Cidade</label>
+      <div class="d-inline-block" id="contentCidadesSelect">
+        <select class="form-control form-control-sm form-select d-inline-block" name="UF" id="UF">
+        </select>
+      </div>
+
+      <div class="d-inline-block" id="contentCidadesSelect">
+        <select class="form-control form-control-sm form-select d-inline-block"  id="cidade"
+          name="idCidade">
+        </select>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="form-group">
+    <label for="">Tipo</label>
+    <select class="form-control" name="tipoCurso" id="tipoCurso">
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="">Instituição</label>
+    <select class="form-control" name="instituicaoCurso" id="instituicoes">
+    </select>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Cadastrar</button>
+
+</form>
