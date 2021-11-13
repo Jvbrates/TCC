@@ -1,9 +1,35 @@
-Variaveis
-exemploFuncao
-Classe
+
+# Convenções  de Código
+
+## Dados no banco
+### Turnos:
+0. Manhã
+1. Tarde
+2. Noite 
+3. Integral Matutino
+4. Integral Vespertino
+5. Flexível 
+
+### Modalidades:
+0. Presencial 
+1. Ead
+
+### Tipos Duração:
+0. Horas
+1. Semestres
+2. Anos
+
+### Tipos Curso:
+
+1. Profissionalizante 
+2. Técnico
+3. Graduação - Técnologo
+4. Graduação - Bacharel
+5. Graduação - Licenciatura
+6. Pós-graduação - Lato sensu
+7. Pós-graduação - Stricto sensu
 
 
-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
 
 Isset: Verifica se a variável é definida.
 

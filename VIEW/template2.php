@@ -36,14 +36,12 @@
     <!--- Opções que serão escondidas no menu-->
     <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item"><a class="nav-link" href="http://localhost/TCC/user/favoritos" tabindex="-1">Favoritos</a></li>
         <li class="nav-item"><a class="nav-link" href="http://localhost/TCC/user/perfil" tabindex="-1">Meu Dados</a></li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" href="#i" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Gerenciar
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li><a class="dropdown-item" href="http://localhost/TCC/cidades/admin">Cidades</a></li>
             <li><a class="dropdown-item" href="http://localhost/TCC/cursos/admin">Cursos</a></li>
             <li><a class="dropdown-item" href="http://localhost/TCC/instituicoes/">Instituições</a></li>
             <li><hr class="dropdown-divider"></li>
@@ -69,15 +67,20 @@
 
 
     <!-- Carregamento da página dentro do template-->
-    <main class="p-10">
+    <main class="p-10 container">
 
     <?php 
     
     $this->carregarViewinTemplate($viewName, $dados, $toJavascript);?>
+    
     </main>
+  
+  
 
-    <!-- Bootstrap Bundle e Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+   <!-- Bootstrap Bundle e Popper -->
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+
+   
     tipo 2 ==> admininistrador logado
   </body>
 </html>

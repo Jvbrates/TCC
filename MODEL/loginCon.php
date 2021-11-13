@@ -2,7 +2,7 @@
 //Este arquivo de conexão será responsável pelas autenticações 
 class  loginCon
 {
-    
+
     private $con;
 
     //Ao criar o objeto será feira conexxão com banco de dados ==/ /==
@@ -17,14 +17,16 @@ class  loginCon
     public function setLogin(array $parametros) //verifica se login senha esta correto
     {
         $read = $this->con->prepare("SELECT idUsuario FROM USUARIO WHERE nomeUsuario LIKE :nomeUsuario AND senha LIKE :senha ");
+        $password = md5($parametros['password']);
 
         $read->bindparam(':nomeUsuario', $parametros['user']);
-        $read->bindparam(':senha', $parametros['password']);
+        $read->bindparam(':senha', $password);
         $read->execute();
 
         if ($read->rowCount() == 0) {
             return false;
         } else {
+            $_SESSION['id'] = $read->fetch(PDO::FETCH_BOTH)[0];
             return true;
         }
     }
@@ -34,10 +36,12 @@ class  loginCon
     //mas retorna um array com os dados do usuario
     public function getAllData(array $parametros) // retorna dados do usuario
     {
+        $password = md5($parametros['password']);
+
         $read = $this->con->prepare("SELECT * FROM USUARIO WHERE nomeUsuario LIKE :nomeUsuario AND senha LIKE :senha ");
 
         $read->bindparam(':nomeUsuario', $parametros['user']);
-        $read->bindparam(':senha', $parametros['password']);
+        $read->bindparam(':senha', $password);
         $read->execute();
 
         if ($read->rowCount() == 0) {
@@ -64,7 +68,7 @@ class  loginCon
     }
 
     //Verifica a disponibilidade do email no banco de dados
-    
+
     public function verEmail(string $email)
     {
 
@@ -83,11 +87,13 @@ class  loginCon
         if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
             return false;
         }
+
+        $password = md5($_POST['password']);
         $read = $this->con->prepare("INSERT INTO USUARIO (nome, nomeUsuario, senha, emailUsuario, tipo) VALUES ( :nome, :username, :senha, :email, 0)");
         $read->bindparam(':nome', $_POST['nome']);
         $read->bindparam(':username', $_POST['user']);
         $read->bindparam(':email', $_POST['email']);
-        $read->bindparam(':senha', $_POST['password']);
+        $read->bindparam(':senha', $password);
         try {
             $read->execute();
             return true;

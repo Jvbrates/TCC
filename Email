@@ -7,7 +7,7 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
 parser = argparse.ArgumentParser()
-parser.add_argument("Objetivo", help="Objetivo da mensagem enviada. | R para redefinição de senha. | C para cadastro. |")
+parser.add_argument("Objetivo", help="Objetivo da mensagem enviada. | R para redefinição de senha.| F para refefinição de senha falha | C para cadastro. | ")
 parser.add_argument("From", help="Email remetente")
 parser.add_argument("Password", help="Senha de login do email remetente")
 parser.add_argument("To", help="Email destinatário")
@@ -59,6 +59,87 @@ if args.Objetivo == "C":
 
     s.sendmail(msg['From'], [msg['To']], msg.as_string())
 
+elif args.Objetivo == "R":
+    server = smtplib.SMTP('smtp.gmail.com:587')
+
+    msg = MIMEMultipart("alternative")
+    msg.set_charset("utf-8")
+
+    email_content = MIMEText(f"""
+    <html>
+
+    <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    </head>
+
+    <body>
+
+    <h1>Nova senha:</h1> 
+    <p>{args.newPassword}</p>
+    <p></p>
+    </body>
+    </html>
+
+
+    """, 'html')
+
+    msg['Subject'] = 'Redefinição de Senha'
+
+    msg['From'] = args.From
+    msg['To'] = args.To
+    password = "covid-19"
+
+    msg.add_header('Content-Type', 'text/html')
+    msg.attach(email_content)
+
+    s = smtplib.SMTP('smtp.gmail.com: 587')
+    s.starttls()
+
+    # Login Credentials for sending the mail
+    s.login(msg['From'], password)
+
+    s.sendmail(msg['From'], [msg['To']], msg.as_string())
+
+elif args.Objetivo == "F":
+    server = smtplib.SMTP('smtp.gmail.com:587')
+
+    msg = MIMEMultipart("alternative")
+    msg.set_charset("utf-8")
+
+    email_content = MIMEText(f"""
+    <html>
+
+    <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    </head>
+
+    <body>
+
+    <h1>Conta não Cadastrada</h1>
+    <p>Este email não possui conta no sistema, faça cadastro ou peça ao administrador.</p> 
+    
+    </body>
+    </html>
+
+
+    """, 'html')
+
+    msg['Subject'] = 'Redefinição de Senha'
+
+    msg['From'] = args.From
+    msg['To'] = args.To
+    password = "covid-19"
+
+    msg.add_header('Content-Type', 'text/html')
+    msg.attach(email_content)
+
+    s = smtplib.SMTP('smtp.gmail.com: 587')
+    s.starttls()
+
+    # Login Credentials for sending the mail
+    s.login(msg['From'], password)
+
+    s.sendmail(msg['From'], [msg['To']], msg.as_string())
 
 
 

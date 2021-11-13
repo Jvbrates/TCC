@@ -1,2 +1,74 @@
+<form class="row g-3 m-5 needs-validation" onsubmit="return false;">
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" aria-label="Text input with dropdown button">
+        <div class="input-group-append">
+            <button id="submit" class="btn btn-outline-info" type="button">
+                <svg id="svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-search" viewBox="0 0 16 16">
+                    <path
+                        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                </svg>
+            </button>
+        </div>
+    </div>
 
-<h2>Aqui haverá um search(form) e uma listagem dos cursos mostrando seus resumos</h2>
+
+    </div>
+    <div class="col-md-6 form-radio">
+        <label>Modalidade:</label>
+        <div class="form-radio">
+            <input class="form-check-input" type="checkbox">
+            <label class="form-check-label">
+                Presencial
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="modPres" value="" id="flexCheckChecked">
+            <label class="form-check-label" for="flexCheckChecked">
+                Educação à Distância
+            </label>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <label for="validationCustomUsername" class="form-label">Turno:</label>
+        <div class="input-group">
+            <select class="dropdown-toggle form-control form-select" name="" id="">
+                <option default></option>
+                <option value="0">Manhã</option>
+                <option value="1">Tarde</option>
+                <option value="2">Noite</option>
+                <option value="3">Integral Matutino</option>
+                <option value="4">Integral Vespertino</option>
+                <option value="5">Flexivel</option>
+            </select>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <label for="validationCustomUsername" id="uf"  class="form-label">Localização</label>
+        <div class="input-group">
+            <!-- UF -->
+            <select class="form-control form-control-sm form-select" name="UF" id="UF">
+                <option id='none'></option>
+            </select>
+            <!-- Cidade -->
+            <select class="form-control form-control-sm form-select" id="cidade" name="idCidade">
+            </select>
+        </div>
+    </div>
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+        <label for="validationCustomUsername"  class="form-label">Instituição</label>
+        <div class="input-group">
+            <select class="dropdown-toggle form-control form-select" name="" id="instituicoes">
+                <option></option>
+            </select>
+        </div>
+    </div>
+</form>
+<div id="resultadoContainer">
+    
+
+</div>
+
+<script type="module" src="js/homepage.js"></script>
+

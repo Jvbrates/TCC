@@ -27,14 +27,13 @@ class homeController extends controller{
        //echo "chegou em homecontroller index";
     }
 
-    public function testededados()
-    {   
-        //$a = new testeconexao();
-        //$dados = $a->listatab();
-        
-        
-        include '../VIEW/testededados.php'  ;
+    public function search(){
+        $a = new homeModel();
+    
+        echo(json_encode($a->search(busca:$_POST['busca'], cidade:$_POST['cidade'], modalidade:$_POST['modalidade'], turno:$_POST['turno'], instituicao:$_POST['instituicao']), JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE));   
+        //echo(json_encode($_POST, JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE));   
     }
+
 }   
 
 

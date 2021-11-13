@@ -81,9 +81,19 @@ class instituicoesController extends controller
 
     static function getCascade($id) // retorna todos os dados de uma instituição
     {
-        loginController::redirectLogin(1, 2);
+        
         $a = new instituicaoCon();
         header('Content-Type: application/json');
         echo (json_encode($a->getCascade($id), JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE));
+    }
+
+    public function view()
+    {
+        $this->carregarTemplate('viewInstituicao', loginController::getTipo());
+    }
+
+    public function viewframe()
+    {
+        $this->carregarViewinTemplate('viewInstituicao', loginController::getTipo());
     }
 }

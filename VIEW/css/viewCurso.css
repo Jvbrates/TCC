@@ -1,0 +1,40 @@
+@import url("homepage.css");
+
+h3 {
+	display: inline-block;
+}
+
+p.text-justify {
+    text-align: justify!important;
+}
+
+#info, #infoI {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-grow: 2;
+    padding: 5px;
+    justify-content: space-between;
+}
+
+#info span, #infoI span {
+    margin: 5px;
+    flex: 1 40%;
+}
+
+#info span:hover, #infoI span:hover {
+    cursor: default!important;
+}
+
+.fullline {
+    flex: 1 60%!important;
+}
+
+
+#map {
+    margin: 10px;
+    height: 350px;
+    border: 1px solid #212529;
+    border-radius: .25rem;
+}
+

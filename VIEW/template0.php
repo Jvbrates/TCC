@@ -58,7 +58,7 @@
 
 
     <!-- Carregamento da página dentro do template-->
-    <main class="p-10">
+    <main class="p-10 container">
 
     <?php $this->carregarViewinTemplate($viewName, $dados, $toJavascript);?>
     </main>

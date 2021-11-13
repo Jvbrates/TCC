@@ -1,0 +1,77 @@
+<div class="row p-5">
+    <div class="col-md m-2">
+
+        <form id="form" class="row g-3 needs-validation">
+            <div class="col-12">
+                <!-- FIXME Configurar validações  de formulario-->
+                <label class="form-label">Nome</label>
+                <input type="text" class="form-control" id="nome" name="nome" required>
+
+            </div>
+
+            <div class="col-12">
+                <label class="form-label">Nome de Usuário</label>
+                <div class="input-group">
+
+                    <input type="text" class="form-control" id="username" name="username" required>
+                </div>
+            </div>
+
+            <div class="col-12">
+                <label class="form-label">Email</label>
+                <div class="input-group">
+
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+            </div>
+
+
+            <div class="col-12">
+                <button class="btn btn-primary" id="editaperfil" type="submit">Salvar alterações</button>
+            </div>
+        </form>
+    </div>
+    <div class="vr"></div><!-- <div class="vr"></div> -->
+    <div class="col-md m-2 d-flex justify-content-center align-items-center">
+
+
+        <button type="button" id="modal" data-bs-toggle="modal" data-bs-target="#senhaModal"
+            class="btn btn-primary btn-lg btn-block" data-bs-toggle="modal" data-bs-target="#senhaModal">Alterar
+            senha</button>
+
+
+
+        <!-- Modal -->
+        <div class="modal" id="senhaModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <form id="formSenha" class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Alterar senha</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="">Senha Atual</label>
+                            <input type="password" class="form-control" name="senha" placeholder="">
+
+                            <label for="">Nova Senha</label>
+                            <input type="password" class="form-control" name="nsenha" placeholder="">
+
+                            <label for="">Repetir Senha</label>
+                            <input type="password" class="form-control" name="" placeholder="">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" id="nsenhaSubmit" class="btn btn-primary">Salvar</button>
+                    </div>
+
+                </div>
+
+            </form>
+        </div>
+
+
+    </div>
+</div>
+
+<script src="js/perfil.js"></script>

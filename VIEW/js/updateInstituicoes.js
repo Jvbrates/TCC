@@ -5,7 +5,7 @@ let a = function () {
         .then(function (json) {
             return json.json();
 
-        })
+        })//TODO corrigir respostas PHP com lista em lista
         .then(resposta => {
             //console.log(resposta)
             document.querySelector('input[name="nomeInstituicao"]').value = Object.values(resposta)[0]['nomeInstituicao'];

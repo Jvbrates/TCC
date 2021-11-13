@@ -11,7 +11,7 @@ class instituicaoCon
 
     public function getAll()
     {
-        $read = $this->con->prepare("SELECT idInstituicao, nomeInstituicao, fone, email, site  FROM INSTITUICAO ");
+        $read = $this->con->prepare("SELECT idInstituicao, nomeInstituicao,  email, site  FROM INSTITUICAO ");
         $read->execute();
 
         $dados = array();
@@ -81,27 +81,29 @@ class instituicaoCon
     public function update($id, $parametros)
     {
         $coordenadas = $parametros['lat'] . '|' . $parametros["long"];
-        echo ($coordenadas);
-        if(!empty($parametros['emailInstituicao'])){
-        if (!filter_var($parametros['emailInstituicao'], FILTER_VALIDATE_EMAIL)) {
-            return false;
-        }
-        } else {
+        echo ($parametros['emailInstituicao']);
+        if (!empty($parametros['emailInstituicao'])) {
+            echo ('Email nao vazio');
+            if (!filter_var($parametros['emailInstituicao'], FILTER_VALIDATE_EMAIL)) {
+                echo ('Email nao deu');
+                return false;
+            }
+
             if (controller::verifica(
                 $parametros['nomeInstituicao'],
                 $parametros['endereco'],
-                $parametros["sobre"],
+                $parametros["Sobre"],
                 $parametros['fone'],
-
                 $parametros['site'],
                 $parametros['lat'],
                 $parametros["long"]
             )) {
+                echo 'passou pelo verifica';
                 $read = $this->con->prepare("UPDATE `INSTITUICAO` SET `nomeInstituicao` = :nome, `endereco` = :endereco, `sobre` = :sobre, `localizacao` = :coord   , `fone` = :fone, `email` = :email, `site` = :site WHERE `INSTITUICAO`.`idInstituicao` = :id; ");
                 $read->bindParam(":id", $id);
                 $read->bindParam(":nome", $parametros['nomeInstituicao']);
                 $read->bindParam(":endereco", $parametros['endereco']);
-                $read->bindParam(":sobre", $parametros["sobre"]);
+                $read->bindParam(":sobre", $parametros["Sobre"]);
                 $read->bindParam(":coord", $coordenadas);
                 $read->bindParam(":fone", $parametros['fone']);
                 $read->bindParam(":email", $parametros['emailInstituicao']);
@@ -110,7 +112,6 @@ class instituicaoCon
                 $read->execute();
             }
         }
-        return true;
     }
 
     public function getCascade($id)
@@ -125,6 +126,4 @@ class instituicaoCon
         //        $dados = json_encode($read->fethAll(PDO::FETCH_ASSOC));
         return $dados;
     }
-
-
 }

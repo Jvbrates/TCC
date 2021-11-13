@@ -1,0 +1,42 @@
+#svg {
+    color: #0dcaf0;
+}
+
+button:hover #svg {
+    color: whitesmoke;
+    transition: 0.5s;
+}
+
+
+/*UF*/
+#UF {
+	max-width: 25%;
+    min-width: 80px;
+}
+
+
+
+.bi.bi-arrow-right-square{
+    color: rebeccapurple;
+    position: relative;
+    top: 0;
+}
+
+.bi.bi-arrow-right-square:hover {
+    transform: scale(1.25);
+    
+    transition: 0.25s;
+    
+}
+
+
+
+.cardCont *{
+    margin: 1px;
+}
+
+#contBotao {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

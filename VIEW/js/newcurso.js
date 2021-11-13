@@ -6,15 +6,15 @@ let instituicoesPromise = await fetch('http://localhost/TCC/instituicoes/getAll'
 
     )
 
-instituicoesPromise.forEach(preencheInstituições);
+    instituicoesPromise.forEach(preencheInstituições);
 
-function preencheInstituições(array) {
-    let option = document.createElement('option');
-    option.innerHTML = array.nomeInstituicao;
-    option.value = array.idInstituicao;
-    console.log(array)
-    document.getElementById('instituicoes').appendChild(option);
-}
+    function preencheInstituições(array) {
+        let option = document.createElement('option');
+        option.innerHTML = array.nomeInstituicao;
+        option.value = array.idInstituicao;
+        console.log(array)
+        document.getElementById('instituicoes').appendChild(option);
+    }
 
 //Preenche Select Cidades
 
@@ -38,7 +38,7 @@ async function preencheUF(json) {
 
 async function preencheCidade(json) {
     let cidade = document.getElementById('cidade');
-    cidade.textContent = '';
+    cidade.textContent = ''//??? textContent ou htmlcontent
     let array = await json.json();
     array.forEach(el => {
 
@@ -52,6 +52,7 @@ async function preencheCidade(json) {
 
 function cidadePromise() {
     let cidadeId = document.getElementById('UF').childNodes[document.getElementById('UF').selectedIndex + 1].id;
+    console.log(cidadeId);
     fetch('http://localhost/TCC/cursos/cidades/' + cidadeId, { method: 'GET' }).then(preencheCidade)
 }
 
