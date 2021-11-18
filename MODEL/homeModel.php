@@ -60,4 +60,17 @@ class homeModel
         return $dados;
     }
 
+
+    public function getDados(){
+        $read = $this->con->query("SELECT COUNT(INSTITUICAO.idInstituicao) as 'instituicoes' FROM INSTITUICAO; ");
+        $data["Instituicoes"] = $read->fetch(PDO::FETCH_BOTH)[0];
+        $read = $this->con->query("SELECT COUNT(CURSO.idCurso) as 'cursos' FROM CURSO;");
+        $data['Cursos'] = $read->fetch(PDO::FETCH_BOTH)[0];
+        $read = $this->con->query("SELECT COUNT(CURSO.idCurso) as 'cursosAtv' FROM CURSO WHERE CURSO.visivel = 1;");
+        $data['CursosAtv'] = $read->fetch(PDO::FETCH_BOTH)[0];
+        $read = $this->con->query("SELECT COUNT(USUARIO.idUsuario) as 'users' FROM USUARIO; ");
+        $data['Usuarios'] = $read->fetch(PDO::FETCH_BOTH)[0];
+
+        return $data;
+    }
 }

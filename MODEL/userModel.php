@@ -64,6 +64,7 @@ class userModel
 
         if (!filter_var($value['email'], FILTER_VALIDATE_EMAIL)) {
             echo ('nao passou no email');
+            print_r($value);
             return false;
         }
         try {
@@ -102,11 +103,12 @@ class userModel
             $id = $read->fetch(PDO::FETCH_BOTH)[0];
 
             $read = $this->con->prepare('UPDATE USUARIO SET USUARIO.senha = :senha WHERE USUARIO.idUsuario LIKE :id');
-            $read->bindparam(':senha', $value['nsenha']);
+            $md5 = md5($value['nsenha']);
+            $read->bindparam(':senha', $md5);
 
             $read->bindparam(':id', $id);
             $read->execute();
-
+            echo('AAA');
             session_unset();
             return true;
         } catch (\Throwable $th) {

@@ -1,29 +1,27 @@
-<form class="row g-3 m-5 needs-validation" onsubmit="return false;">
+
+<form class="row g-3 needs-validation info mt-3" onsubmit="return false;">
+    <h2 class="info blur">Faça sua Pesquisa</h2>
     <div class="input-group mb-3">
-        <input type="text" class="form-control" aria-label="Text input with dropdown button">
+        <input type="text" class="form-control info" placeholder="Digite aqui o nome do curso">
         <div class="input-group-append">
-            <button id="submit" class="btn btn-outline-info" type="button">
-                <svg id="svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                    class="bi bi-search" viewBox="0 0 16 16">
-                    <path
-                        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-                </svg>
+            <button id="submit" class="btn btn-outline-info info px-3" type="button">
+                <i class="bi bi-search " ></i>
             </button>
         </div>
     </div>
 
 
-    </div>
+    
     <div class="col-md-6 form-radio">
         <label>Modalidade:</label>
         <div class="form-radio">
-            <input class="form-check-input" type="checkbox">
+            <input class="form-check-input info" type="checkbox">
             <label class="form-check-label">
                 Presencial
             </label>
         </div>
         <div class="form-check">
-            <input class="form-check-input" type="checkbox" name="modPres" value="" id="flexCheckChecked">
+            <input class="form-check-input info" type="checkbox" name="modPres" value="" id="flexCheckChecked">
             <label class="form-check-label" for="flexCheckChecked">
                 Educação à Distância
             </label>
@@ -32,7 +30,7 @@
     <div class="col-md-6">
         <label for="validationCustomUsername" class="form-label">Turno:</label>
         <div class="input-group">
-            <select class="dropdown-toggle form-control form-select" name="" id="">
+            <select class="dropdown-toggle form-control form-select info" name="" id="">
                 <option default></option>
                 <option value="0">Manhã</option>
                 <option value="1">Tarde</option>
@@ -47,11 +45,11 @@
         <label for="validationCustomUsername" id="uf"  class="form-label">Localização</label>
         <div class="input-group">
             <!-- UF -->
-            <select class="form-control form-control-sm form-select" name="UF" id="UF">
-                <option id='none'></option>
+            <select class="form-control form-control-sm form-select info" name="UF" id="UF" >
+                <option id='none'>UF</option>
             </select>
             <!-- Cidade -->
-            <select class="form-control form-control-sm form-select" id="cidade" name="idCidade">
+            <select class="form-control form-control-sm  info form-select"  id="cidade" name="idCidade">
             </select>
         </div>
     </div>
@@ -59,13 +57,15 @@
     <div class="col-md-6">
         <label for="validationCustomUsername"  class="form-label">Instituição</label>
         <div class="input-group">
-            <select class="dropdown-toggle form-control form-select" name="" id="instituicoes">
+            <select class="dropdown-toggle form-control form-select info" name="" id="instituicoes">
                 <option></option>
             </select>
         </div>
     </div>
 </form>
-<div id="resultadoContainer">
+<br>
+<hr>
+<div id="resultadoContainer" class="py-2">
     
 
 </div>

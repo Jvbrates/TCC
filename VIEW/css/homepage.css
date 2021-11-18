@@ -16,18 +16,6 @@ button:hover #svg {
 
 
 
-.bi.bi-arrow-right-square{
-    color: rebeccapurple;
-    position: relative;
-    top: 0;
-}
-
-.bi.bi-arrow-right-square:hover {
-    transform: scale(1.25);
-    
-    transition: 0.25s;
-    
-}
 
 
 

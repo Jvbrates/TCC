@@ -1,133 +1,132 @@
-:root 
-{
-    --cor_fundo: #E1E1E1;
-    --cor_destaque: #ff7300;
-    --cor_secundaria: #FFFFFF;
-    --link-color-hover: #ec5840;
+@import url(variables.css);
+@import url(template.css);
+
+
+body {
+    background: url('../img/loginimg.jpeg') 0 / cover fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    color: var(--font-color);
 }
 
-    /*Cores Ligh mode */
-    *[class*="col-sm"], main, body {    background-color: var(--cor_fundo);     }
-    .form-wrapper 
-{
-    background-color: var(--cor_secundaria);
-    box-shadow: 0px 5px 5px 6px rgba(0, 0, 0, 0.3);
-}
 
-    button:not(.close)
-{
-    transition: 2s!important;
-    background: #FFFFFF;
-    border-color: black!important;
-}
-
-   button:active:not(.close), button:hover:not(.close)
-{
-    border-color: var(--cor_destaque)!important;
-    transition: 1s;
-}
-
-    input 
-{
-    background: rgba(196, 196, 196, 0.15)!important;
-} 
-
-    input:focus 
-{
-    transition: 1s;
-    border-bottom: solid var(--cor_destaque) 1px!important ;
-}
-
-    .hr {    border: 1px solid var(--cor_destaque);    }
-
-    .cred 
-{
-    background: rgba(0, 0, 0, 0.7);
-    color: azure;
-}
-
-    /*Cores Dark mode */
-
-
-
-
-
-    /* Outras configurações */
-
-#alert_wrapper {
-    padding-top: 5px;
-    margin-bottom: -5px;
-}
-
-img {    height: 100vh;    }
-
-
-.form-container {
+main {
     display: flex;
- }
-
- .form-wrapper {
-    max-width: 90%;
-    min-width: 70%;
-    border-radius: 10px;
-    
-    margin: auto;
-    margin-top: 2vh;
-    padding: 50px;
-    padding-bottom: 0px;
-    margin-bottom: 15px;
-
-    display: flex;
+    justify-content: center;
+    align-content: center;
     flex-direction: column;
-    justify-content:flex-start;
-    
-    
-    text-align: center;
-   
+    min-height: 100vh;
 }
 
-
-
-.form-wrapper * {
-    margin: 15px ;
-}
-
-
-button {
-    width: 118px;
-    padding: 5px;
-    border-radius: 75px!important;
-    font-weight: bold;
-}
-
-
-input { 
-    border-radius: 50px!important;
-    text-align: center;
-    margin: 20px 0px!important;
-}
-
-
-.hr 
-{
+.form-wrapper {
     position: relative;
-    top: -40px;
+    padding: 20px;
+    max-width: 590px;
+    width: 90vw;
+    background-color:var(--blur);
+    border-radius: var(--border-radius);
+    margin: auto;
+    text-align: center;
+    color: var(--font-color);
 }
 
-#img-login {
-    position: relative;
+.form-wrapper h1 {
+    color: var(--theme);
+
+}
+.form-wrapper a {
+    color: var(--font-color)!important;
 }
 
-.cred {
-    display: none;
-}
-#img-login:hover .cred {
-    display: block;
+.form-wrapper  *{
+    margin-top: 4vh;
 }
 
-.cred {
-  padding-left: 20px;
-  position: absolute;
-  bottom: 0;
-  border-top-right-radius: 4px;
+.modal-content {
+    background-color: var(--bar-color);
+}
+
+
+.btn-outline-primary:hover {
+    border: none;
+    box-shadow: none;
+}
+.btn-close:hover {
+    border: none;
+    box-shadow: none;
+}
+
+.btn-close {
+    background-color: var(--font-color)!important;
+}
+
+#themeColor {
+    position: absolute;
+    top: 5px;
+    margin: 0px;
+    z-index: 2;
+    
+}
+a {
+    border-radius: 500px;
+    width: 100%;
+}
+a:hover{
+    background-color: var(--blur);
+}
+
+form .row {/*FIXME testar background sem backdrop   */
+    background-color: rgba(255, 0, 0, 0)!important;
+}
+
+
+input::placeholder {
+    background-color:unset;
+}
+input {
+    background-color: rgba(255, 0, 0, 0);
+}
+
+
+
+input:focus {
+    border:none;
+}
+
+
+main {
+    margin-top: 0vh;
+    margin-bottom: 0vh;
+    
+}
+
+
+.form-wrapper {
+    padding-bottom: 0px;
+}
+
+#themeColor {
+    position: relative
+}
+
+#sun, #moon {
+    color: black;
+    position: initial
+}
+
+
+#sun {
+    position: absolute;
+    top: -16px;
+}
+#moon {
+    position: absolute;
+    top: -9px;
+}
+
+
+#color {
+    background-color: var(--bar-color);
+    
 }

@@ -27,7 +27,7 @@ async function edit() {
 
             console.log(json);
 
-            document.getElementsByTagName('input')[0].value = json.nomeCurso;
+            document.getElementById('nomeCurso').value = json.nomeCurso;
             defaults.push(json.nomeCurso);
 
             document.getElementsByTagName('textarea')[0].value = json.Descrição;
@@ -70,11 +70,11 @@ document.getElementById("UF").addEventListener('click', el => {
 
 
 
-document.querySelector('button[type="submit"]').addEventListener('click', el => {
+document.querySelectorAll('button[type="submit"]')[1].addEventListener('click', el => {
     el.preventDefault();
 
 
-    var fdata = new FormData(document.getElementsByTagName('form')[0]);
+    var fdata = new FormData(document.getElementsByTagName('form')[1]);
     var object = {};
     fdata.forEach((value, key) => object[key] = value);
     var json = JSON.stringify(object);

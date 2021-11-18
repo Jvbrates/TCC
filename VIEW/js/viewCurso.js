@@ -2,15 +2,19 @@ import { loadCSS } from '/TCC/VIEW/js/funcoes.js';
 loadCSS("css/viewCurso.css");
 
 const cursoID = document.URL.split('/')[document.URL.split('/').length - 1];
-
+document.getElementById('fav').style.color = "var(--font-color)";
 fetch('http://localhost/TCC/cursos/getFullv/' + cursoID, {
     credentials: 'same-origin'
 })
     .then(res => res.json())
     .then(json => {
-
+        
         if (json.log == 0) {
             let check = document.createElement('input');
+            document.getElementById('fav').onclick = () => {
+            check.click();
+            }
+            check.style.display = "none";
             check.type = 'checkbox';
             check.classList.add('form-check-input', 'ms-5');
             document.getElementById('contTitulo').appendChild(document.createElement('span').appendChild(check));
@@ -24,6 +28,9 @@ fetch('http://localhost/TCC/cursos/getFullv/' + cursoID, {
                     json.map((value) => {
                         if (value.idCurso == cursoID) {
                             check.checked = true;
+                            document.getElementById('fav').style.color = "var(--theme)"
+                        } else {
+                            document.getElementById('fav').style.color = "var(--font-color)"
                         }
                     })
                 })
@@ -37,7 +44,29 @@ fetch('http://localhost/TCC/cursos/getFullv/' + cursoID, {
                             document.getElementById(check.id).checked = !(document.getElementById(check.id).checked);
                         }
                     })
+                    .then(res => {
+                        if(check.checked){
+                            console.log('Aqui?')
+                            document.getElementById('fav').style.color = "var(--theme)"
+                        } else {
+                            document.getElementById('fav').style.color = "var(--font-color)"
+                        }
+                    })
+
+                
             })
+        } else if (json.log == 9){
+            let check = document.createElement('input');
+            document.getElementById('fav').onclick = () => {
+                check.click();
+                }
+                check.style.display = "none";
+            check.type = 'checkbox';
+            check.classList.add('form-check-input', 'ms-5');
+            document.getElementById('contTitulo').appendChild(document.createElement('span').appendChild(check));
+            check.checked = false;
+
+            check.onclick  = function(){ window.location.href = "http://localhost/TCC/user/favoritos" }
         }
         console.log(json)
         document.getElementsByTagName('h3')[0].textContent = json[0].nomeCurso;
@@ -131,7 +160,7 @@ fetch('http://localhost/TCC/cursos/getFullv/' + cursoID, {
 
                 document.querySelectorAll('#infoI span')[0].textContent += json[0].fone;
                 document.querySelectorAll('#infoI span')[1].textContent += json[0].email;
-                document.querySelectorAll('#infoI span')[2].textContent += json[0].site;
+                document.querySelectorAll('#infoI span')[2].innerHTML += "<a href='"+json[0].site+"'>"+json[0].site+"</a>";
                 document.querySelectorAll('#infoI span')[3].textContent += json[0].endereco;
                 let lat = parseFloat(json[0].localizacao.split('|')[0]);
                 let lng = parseFloat(json[0].localizacao.split('|')[1]);
@@ -178,7 +207,7 @@ fetch('http://localhost/TCC/cursos/getFullv/' + cursoID, {
                     row.classList.add('row', 'gp-0', 'p-2');
 
                     let conteudo = document.createElement('div');
-                    conteudo.classList.add('col-md-9', 'mg-0', 'ps-5', 'cardCont');
+                    conteudo.classList.add('col-md-12', 'mg-0', 'ps-5', 'cardCont', 'text-center');
 
                     let vr = document.createElement('div');
                     vr.classList.add('vr');
@@ -191,12 +220,12 @@ fetch('http://localhost/TCC/cursos/getFullv/' + cursoID, {
 
                     botao.classList.add('col-md', 'mg-0');
                     botao.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor" class="bi bi-arrow-right-square" viewBox="0 0 16 16"> <path fill-rule="evenodd" d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm4.5 5.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/> </svg>';
-                    botao.getElementsByTagName('svg')[0].onclick = function () {
-                        window.location.href = 'http://localhost/TCC/cursos/view/' + element.IdCurso;
+                    row.onclick = function(){
+                        window.location.href = 'http://localhost/TCC/cursos/view/'+element.IdCurso;
                     }
                     //Preenche conteudo
                     let nome = document.createElement('h5');
-                    nome.classList.add('card-title', 'text-center');
+                    nome.classList.add('card-title', 'text-center', 'highlight');
                     nome.textContent = element.CURSO;
 
                     let instituicao = document.createElement('div');
@@ -285,8 +314,7 @@ fetch('http://localhost/TCC/cursos/getFullv/' + cursoID, {
                     cardBody.appendChild(turno);
                     conteudo.appendChild(cardBody);
                     row.appendChild(conteudo);
-                    row.appendChild(vr);
-                    row.appendChild(botao);
+                  
                     cursoCard.appendChild(row);
                     resultadoContainer.appendChild(cursoCard);
                 })

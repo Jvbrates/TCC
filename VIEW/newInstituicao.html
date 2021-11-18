@@ -2,47 +2,48 @@
     <div class="row">
         <div class="form-group col-xl-12">
             <label for="nomeInstituicao">Nome da Instituição:</label>
-            <input type="text" class="form-control" name="nomeInstituicao" placeholder="Nome">
+            <input type="text" class="form-control info" name="nomeInstituicao" placeholder="Nome">
         </div>
-        <hr>
+        
     </div>
     <div class="row">
         <label for="Conratos">Contatos:</label>
         <div class="form-group col-xl">
-            <input type="text" class="form-control" name="fone" placeholder="Telefone:">
+            <input type="text" class="form-control info" name="fone" placeholder="Telefone:">
         </div>
         <div class="form-group col-xl">
-            <input type="email" class="form-control" name="emailInstituicao" placeholder="email">
+            <input type="email" class="form-control info" name="emailInstituicao" placeholder="email">
         </div>
         <div class="form-group col-xl">
-            <input type="text" class="form-control" name="site" placeholder="site">
+            <input type="text" class="form-control info" name="site" placeholder="site">
         </div>
     </div>
     <div class="row">
         <label for="">Endereço: </label>
         <div class="form-group col-xl">
-            <input type="text" class="form-control" name="endereco" placeholder="Endereço">
+            <input type="text" class="form-control info" name="endereco" placeholder="Endereço">
         </div>
     </div>
     <div class="row">
         <label for="">Sobre: </label>
         <div class=" col-xl">
-        <textarea id="sobre" class="form-control" name="sobre" placeholder="Sobre a instituição..."></textarea>
+        <textarea id="sobre" class="form-control info" name="sobre" placeholder="Sobre a instituição..."></textarea>
         </div>
     </div>
-    <div class="row">
-        <div class="col-xl">
+    <div class="">
+        <div class="">
             <div id="map"></div>
         </div>
-        <div class="col-xl coordenadas">
-            <button class="btn btn-success" onclick="envia()">Cadastrar</button>
+        <div class=" coordenadas m-3">
 
-            <input type="text" id='lat' name="lat" class="form-control" readonly id="fone" placeholder="Latitude">
+            <input type="text" id='lat' name="lat" class="form-control m-1 info" readonly id="fone" placeholder="Latitude">
 
-            <input type="text" class="form-control" name="long" id="long" readonly placeholder="Longitude">
+            <input type="text" class="form-control m-1 info" name="long" id="long" readonly placeholder="Longitude">
 
         </div>
+        
     </div>
+    <div class="row"><button class="btn btn-success title" onclick="envia()">Cadastrar</button></div>
 
 </form>
 

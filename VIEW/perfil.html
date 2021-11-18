@@ -5,7 +5,7 @@
             <div class="col-12">
                 <!-- FIXME Configurar validações  de formulario-->
                 <label class="form-label">Nome</label>
-                <input type="text" class="form-control" id="nome" name="nome" required>
+                <input type="text" class="form-control info" id="nome" name="nome" required>
 
             </div>
 
@@ -13,7 +13,7 @@
                 <label class="form-label">Nome de Usuário</label>
                 <div class="input-group">
 
-                    <input type="text" class="form-control" id="username" name="username" required>
+                    <input type="text" class="form-control info" id="username" name="username" required>
                 </div>
             </div>
 
@@ -21,12 +21,12 @@
                 <label class="form-label">Email</label>
                 <div class="input-group">
 
-                    <input type="email" class="form-control" id="email" name="email" required>
+                    <input  type="email" class="form-control info" id="email" name="email" required>
                 </div>
             </div>
 
 
-            <div class="col-12">
+            <div class="col-12 mt-4">
                 <button class="btn btn-primary" id="editaperfil" type="submit">Salvar alterações</button>
             </div>
         </form>
@@ -47,18 +47,18 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalLabel">Alterar senha</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" id="close-senha" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         <div class="form-group">
                             <label for="">Senha Atual</label>
-                            <input type="password" class="form-control" name="senha" placeholder="">
+                            <input type="password" class="form-control info" name="senha" placeholder="">
 
                             <label for="">Nova Senha</label>
-                            <input type="password" class="form-control" name="nsenha" placeholder="">
+                            <input type="password" class="form-control info" name="nsenha" placeholder="">
 
                             <label for="">Repetir Senha</label>
-                            <input type="password" class="form-control" name="" placeholder="">
+                            <input type="password" class="form-control info" name="" placeholder="">
                         </div>
                     </div>
                     <div class="modal-footer">

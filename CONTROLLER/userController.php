@@ -23,7 +23,7 @@ class userController extends controller
 
 
 
-        echo ($loginTipo);
+        
         $this->carregarTemplate(__FUNCTION__, $loginTipo);
     }
 
@@ -68,6 +68,7 @@ class userController extends controller
         if ($a->editsenha($algo)) {
             header("HTTP/1.1 200 OK");
         } else {
+            
             header("HTTP/1.1 500 erro");
         }
         exit();

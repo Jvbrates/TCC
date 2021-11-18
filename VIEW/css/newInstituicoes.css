@@ -1,25 +1,12 @@
-  main{
-    width: 80%;
-    margin: auto;
-    padding-top: 10vh;
-  }
+
 #map {
     height: 500px;
-    width: 500px;
+    width: 100%
   }
   
-  /* Optional: Makes the sample page fill the window. */
-  html,
-  body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-  }
 
 
-  #infoboxdiv{
-    
-    
+  #infoboxdiv{  
     margin-bottom: 10px;
     opacity: 1;
     
@@ -38,27 +25,22 @@ textarea {
 }
 
   input {
-    margin: 10px;
+    margin: 10px 0px; 
   }
 
   .coordenadas {
     display: flex;
-    align-items: flex-end;
-    position: relative;
-    flex-direction: column-reverse;  
+    flex-direction: row;
+    justify-content: flex-start;
   }
 
 
 
-  #lat, #long{
-    width: 50%;
-    position:relative;
-    right: 50%;
-  }
-
-  .coordenadas btn{
-    align-self: flex-end;
-  }
 
 
   
+
+
+  map {
+    width: 700px;
+  }

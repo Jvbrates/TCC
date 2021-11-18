@@ -23,7 +23,7 @@ const resultadoContainer = document.getElementById('resultadoContainer');
 submit.addEventListener('click', event => {
     event.preventDefault();
 
-    let form = document.getElementsByTagName('form')[0];
+    let form = document.getElementsByTagName('form')[1];
     let data = new FormData();
 
     data.append('busca', form.getElementsByTagName('input')[0].value);
@@ -64,7 +64,7 @@ submit.addEventListener('click', event => {
                 row.classList.add('row', 'gp-0', 'p-2');
 
                 let conteudo = document.createElement('div');
-                conteudo.classList.add('col-md-9', 'mg-0', 'ps-5', 'cardCont');
+                conteudo.classList.add('col-md-12', 'mg-0', 'ps-5', 'cardCont', 'text-center');
 
                 let vr = document.createElement('div');
                 vr.classList.add('vr');
@@ -77,12 +77,12 @@ submit.addEventListener('click', event => {
 
                 botao.classList.add('col-md', 'mg-0');
                 botao.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor" class="bi bi-arrow-right-square" viewBox="0 0 16 16"> <path fill-rule="evenodd" d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm4.5 5.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/> </svg>';
-                botao.getElementsByTagName('svg')[0].onclick = function(){
+                row.onclick = function(){
                     window.location.href = 'http://localhost/TCC/cursos/view/'+element.IdCurso;
                 }
                 //Preenche conteudo
                 let nome = document.createElement('h5');
-                nome.classList.add('card-title', 'text-center');
+                nome.classList.add('card-title', 'text-center', 'highlight');
                 nome.textContent = element.CURSO;
 
                 let instituicao = document.createElement('div');
@@ -171,8 +171,7 @@ submit.addEventListener('click', event => {
                 cardBody.appendChild(turno);
                 conteudo.appendChild(cardBody);
                 row.appendChild(conteudo);
-                row.appendChild(vr);
-                row.appendChild(botao);
+               
                 cursoCard.appendChild(row);
                 resultadoContainer.appendChild(cursoCard);
             })

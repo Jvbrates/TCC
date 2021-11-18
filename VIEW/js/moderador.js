@@ -2,7 +2,7 @@
 
 const nome = document.getElementById('nome');
 const email = document.getElementById('email');
-const formulario = document.getElementById('formLogin');
+const formulario = document.getElementById('fcadMod');
 const senhas = document.querySelectorAll('input[type=password]');
 const alertDiv = document.getElementById('alert_wrapper');
 var verNome = false;
@@ -92,3 +92,22 @@ function validaEmail(emailElement) {
         
     }
 }
+
+//
+const btn = document.getElementById('cadModerador');
+
+
+btn.addEventListener('click', e => {
+    e.preventDefault()
+
+    var data = new FormData(document.getElementById('fcadMod'));
+
+    fetch('http://localhost/TCC/user/setModerador', {
+        credentials:'same-origin',
+        body:data,
+        method:"POST"
+    })
+    .then(res => {
+        window.location.href = "http://localhost/TCC/user/"
+    })
+})

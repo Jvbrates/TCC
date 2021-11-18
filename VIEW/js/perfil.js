@@ -21,7 +21,7 @@ async function main() {
 
     document.getElementById('editaperfil').addEventListener('click', el => {
         el.preventDefault();
-        let fdata = new FormData(document.getElementsByTagName('form')[0]);
+        let fdata = new FormData(document.getElementsByTagName('form')[1]);
         let object = {};
         fdata.forEach((value, key) => object[key] = value);
         let json = JSON.stringify(object);
@@ -34,7 +34,8 @@ async function main() {
         })
             .then(res => {
                 if (res.ok) {
-                    //document.location.reload();
+                    document.querySelector('#avisoModal  .modal-body').textContent = "Atualizado com sucesso";
+                    document.getElementById('btn_modalAviso').click();
                 } else {
                     console.log('Falha no update');
                 }
@@ -47,7 +48,7 @@ async function main() {
 
     document.getElementById('nsenhaSubmit').addEventListener('click', el => {
         el.preventDefault();
-        let fdata = new FormData(document.getElementsByTagName('form')[1]);
+        let fdata = new FormData(document.getElementsByTagName('form')[0]);
         let object = {};
         fdata.forEach((value, key) => object[key] = value);
         let json = JSON.stringify(object);
@@ -60,9 +61,17 @@ async function main() {
         })
             .then(res => {
                 if (res.ok) {
-                    //document.location.reload();
+                    document.getElementById('senhaModal').click()
+
+                    document.querySelector('#avisoModal  .modal-body').textContent = "Senha atualizada com sucesso!";
+                    
+                    document.getElementById('btn_modalAviso').click();
+                    window.location.href = "http://localhost/TCC/login/login"
                 } else {
-                    console.log('Falha no update');
+                    
+                    document.querySelector('#avisoModal  .modal-body').textContent = "Senha atual incorreta!";
+                    
+                    document.getElementById('btn_modalAviso').click();
                 }
             }
 
@@ -74,4 +83,4 @@ async function main() {
 }
 
 
-main(); 
+main();

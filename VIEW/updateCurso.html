@@ -1,26 +1,26 @@
 
 
-<form method="POST" action="http://localhost/TCC/cursos/cad">
+<form method="POST">
   <label>Nome do Curso:</label>
-  <input type="text" name="nomeCurso"><br>
-  <label>Descrição</label>
-  <textarea name="descricaoCurso" id="" cols="30" rows="10"></textarea>
+  <input type="text" id="nomeCurso" name="nomeCurso" class="form-control info" ><br>
+  <label>Descrição:</label><br>
+  <textarea name="descricaoCurso" class="form-control info " id="" cols="30" rows="10" placeholder="Insira a descrição do curso..." ></textarea>
   <br>
   <label>Modalidade</label><br>
   <div class="form-check">
     <label class="form-check-label">
-      <input checked type="radio" class="form-check-input" name="modalidadeCurso" value="0">
+      <input checked type="radio" class="form-check-input info" name="modalidadeCurso" value="0">
       Presencial
     </label><br>
     <label class="form-check-label">
-      <input type="radio" class="form-check-input" name="modalidadeCurso" value="1">
+      <input type="radio" class="form-check-input info" name="modalidadeCurso" value="1">
       Ensino a Distância (EAD)
     </label>
   </div>
   <!---Selecionar EAD e logo turno flexivel seria interessante-->
   <div class="form-group">
     <label for="">Turno</label>
-    <select class="form-control" name="turno" >
+    <select class="form-control form-select info" name="turno">
       <option value="0">Manhã</option>
       <option value="1">Tarde</option>
       <option value="2">Noite</option>
@@ -33,34 +33,33 @@
 
   <div class="row form-group">
     <label>Duração</label>
-    <div class="col">
-      <input type="number" name="duracaoCurso">
-      <div class="d-inline-block">
-        <select class="form-control form-control-sm" name="tipoDuracaoCurso">
+    <div class="col input-group">
+      <input number type="number" name="duracaoCurso" class="form-control info">
+      <div class="input-group-append">
+        <select class="form-control form-control-sm form-select info info__border-left" name="tipoDuracaoCurso">
           <option value="0">Horas</option>
           <option value="1">Semestres</option>
           <option value="2">Anos</option>
         </select>
       </div>
     </div>
-
   </div>
 
 
-  </div>
+  
 
   <div class="row">
-    <div class="col ">
+    <label class="d-block mt-2" for="">Cidade</label>
+    <div class="col input-group">
 
-      <label class="d-block" for="">Cidade</label>
+      
       <div class="d-inline-block" id="contentCidadesSelect">
-        <select class="form-control form-control-sm form-select d-inline-block" name="UF" id="UF">
+        <select class="form-control form-control-sm form-select info info__border-right" name="UF" id="UF">
         </select>
       </div>
 
       <div class="d-inline-block" id="contentCidadesSelect">
-        <select class="form-control form-control-sm form-select d-inline-block"  id="cidade"
-          name="idCidade">
+        <select class="form-control form-control-sm form-select  info info__border-left" id="cidade" name="idCidade">
         </select>
       </div>
 
@@ -68,22 +67,21 @@
 
   </div>
 
-  <div class="form-group">
+  <div class="form-group mt-2">
     <label for="">Tipo</label>
-    <select class="form-control" name="tipoCurso" id="tipoCurso">
+    <select class="form-control form-select info" name="tipoCurso" id="tipoCurso">
     </select>
   </div>
 
-  <div class="form-group">
+  <div class="form-group mt-2">
     <label for="">Instituição</label>
-    <select class="form-control" name="instituicaoCurso" id="instituicoes">
+    <select class="form-control form-select info" name="instituicaoCurso" id="instituicoes">
     </select>
   </div>
 
-  <button type="submit" class="btn btn-primary">Editar</button>
+  <button type="submit" class="btn btn-primary my-2">Editar</button>
 
 </form>
-
 <!-- <script type="text/javascript" src="../VIEW/js/updateCurso.js"> </script> -->
 <script type="module" src="js/updateCurso.js"> </script>
 

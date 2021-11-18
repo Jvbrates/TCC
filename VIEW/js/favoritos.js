@@ -25,6 +25,12 @@ async function main() {
                 linha.appendChild(curso);
                 linha.appendChild(instituicao);
                 linha.appendChild(check);
+
+                curso.style.cursor = "pointer"
+                curso.onclick = ()=>{
+                    
+                    document.location.href = "http://localhost/TCC/cursos/view/"+value.idCurso
+                }
                 tbody.appendChild(linha);
 
 
@@ -43,7 +49,12 @@ async function main() {
                         document.getElementById(element.id).checked = !(document.getElementById(element.id).checked);
                     }
                 })
+            console.log('Chegado aqui')
+            if (!element.checked) {
+                element.parentElement.parentElement.remove();
+            }
         })
+
     })
 
 }

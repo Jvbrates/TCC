@@ -1,4 +1,4 @@
-@import url("homepage.css");
+
 
 h3 {
 	display: inline-block;
@@ -37,4 +37,13 @@ p.text-justify {
     border: 1px solid #212529;
     border-radius: .25rem;
 }
+
+.title{
+    background-color: rgba(0, 0, 0, 0.308);
+    text-align: center!important;
+    border-radius: 500px;
+    border: var(--border-color);
+    box-shadow: -2px 2px 1px 1px rgba(0,0,0,0.75);
+}   
+
 

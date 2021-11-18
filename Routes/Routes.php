@@ -22,9 +22,15 @@ class Routes
 
             $url = explode('/', $url);
             error_log($url[0]);
+            
+
             $controller = $url[0] . 'Controller'; // classe
             array_shift($url);
+            
+            //API ANTES DAQUI |-||<>||-|
 
+
+            //Define o Método| Padrão é index
             if (isset($url[0]) && !empty($url[0])) {
                 $metod = $url[0];
                 array_shift($url);
@@ -32,32 +38,35 @@ class Routes
                 $metod = 'index';
             }
 
-            if (count($url) > 0) {
-                $parameters = $url;
-            }
-            count($url) > 0 ? $parameters = $url : 0;
+           //Define Parametros
+            count($url) > 0 ? $parameters = $url : null;
+
+
+            print_r($parameters);
         } else { //caso nao seja passado nada na URl
+           
             $controller = "homeController";
             $metod = "homepage";
         }
 
 
         $route = '../CONTROLLER/' . $controller . '.php';
-        //caso seja passado um caminho inexistente
+        //caso a classe requisistada nao exita chamara  a classe home
         if(!class_exists($controller)){
             $controller = 'homeController';
         }
-       
+        //Caso o método requisitado não exista chamará o primeiro método 
         if(!method_exists($controller, $metod)){
             $metod = get_class_methods(new $controller)[0];
         }; 
+        //Caso nem a classe nem  método existam chamará homeController->homepage()
         if (!file_exists($route) && !method_exists($controller, $metod)) {
          
          
             $controller = "homeController";
             $metod = "homepage";
         }
-
+        
         $classe = new $controller;
         $classe->{$metod}($parameters);
      

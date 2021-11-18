@@ -114,7 +114,7 @@ class cursosModel
         
     }
 
-    public function getFullv($id)
+    public function getFullv($id)//FIXME Caso curso favoritado mas invisivel, será vísivel?
     {
 
         $read = $this->con->prepare("SELECT c.idCurso, c.nomeCurso, c.modalidade, c.turno, c.duracao, c.Descrição, c.visivel, c.tipoDuracao, c.idtipoCurso, c.idCIDADE, c.idInstituicao, CIDADE.nome as 'CIDADE', ESTADO.UF as 'UF' FROM CURSO c JOIN CIDADE on c.idCIDADE = CIDADE.idCIDADE JOIN ESTADO on ESTADO.idESTADO = CIDADE.idESTADO WHERE c.idCurso = :id AND c.visivel = 1; ");
