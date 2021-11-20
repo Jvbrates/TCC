@@ -185,18 +185,19 @@ fetch('http://localhost/TCC/cursos/getFullv/' + cursoID, {
         data.append('turno', '');
         data.append('cidade', '')
         data.append('instituicao', json[0].idInstituicao);
-
+        console.log('Pré Search');
         fetch('http://localhost/TCC/home/search', {
             method: 'POST',
             body: data
         })
             .then(res => res.json())
             .then(json => {
+                console.log('Algo??');
                 resultadoContainer.innerHTML = '';
 
 
                 json.map((element) => {
-
+                    console.log('aaaa');
                     console.log(element)
 
                     let cursoCard = document.createElement('div');
@@ -323,7 +324,7 @@ fetch('http://localhost/TCC/cursos/getFullv/' + cursoID, {
 
             })
 
-
+            console.log('Pos Search');
     })
 
 

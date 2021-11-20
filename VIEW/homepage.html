@@ -1,4 +1,9 @@
-
+<div class="slogan text-center title blur info">
+    <p class="fs-1"><img src="img/SquareFill.svg" alt="" width="70" height="56" class="d-inline-block align-text-top">
+        Catálogo de Cursos</p>
+        <p class="text-center fs-4 fw-bold">"Se a educação sozinha não transforma a sociedade, sem ela tampouco a sociedade muda."</p>
+        <p class="text-end mx-5 ">Paulo Freire</p>
+</div>
 <form class="row g-3 needs-validation info mt-3" onsubmit="return false;">
     <h2 class="info blur">Faça sua Pesquisa</h2>
     <div class="input-group mb-3">
@@ -53,7 +58,19 @@
             </select>
         </div>
     </div>
-    <div class="col-md-3"></div>
+    <div class="col-md-3">
+        <label for="validationCustomUsername"   class="form-label">Tipo:</label>
+        <select name="Tipo" class="form-control form-control form-select info"  >
+            <option></option>
+            <option value="1">Profissionalizante</option>
+            <option value="2">Técnico</option>
+            <option value="3">Graduação - Técnologo</option>
+            <option value="4">Graduação - Bacharel</option>
+            <option value="5">Graduação - Licenciatura</option>
+            <option value="6">Pós-graduação - Lato sensu</option>
+            <option value="7">Pós-graduação - Stricto sensu</option>
+        </select>
+    </div>
     <div class="col-md-6">
         <label for="validationCustomUsername"  class="form-label">Instituição</label>
         <div class="input-group">
@@ -63,8 +80,8 @@
         </div>
     </div>
 </form>
-<br>
-<hr>
+
+
 <div id="resultadoContainer" class="py-2">
     
 

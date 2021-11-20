@@ -63,7 +63,7 @@
 }
 
 body {
-    background: url('../img/backgroundLg.jpeg') 0 / cover fixed;
+    background: url('../img/backgroundLg.jpg') 0 / cover fixed;
     background-size: cover;
     background-repeat: no-repeat;
     height: 100%;
@@ -167,7 +167,7 @@ main {
 /*Caso navegador não tenha suporte a backdrop-blur*/
 @supports not ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
     .blur::before {
-        background: url('../img/backgroundLg.jpeg') 0 / cover fixed;
+        background: url('../img/backgroundLg.jpg') 0 / cover fixed;
         content: '';
         margin: -35px;
         position: absolute;
@@ -175,7 +175,7 @@ main {
         right: 0;
         bottom: 0;
         left: 0;
-        filter: blur(1.5em);
+        filter: blur(0.35em);
         z-index: -1;
     }
 }
@@ -346,9 +346,13 @@ select.info:focus, input.info:focus :not(input[type="checkbox"]), input.form-con
 
 
 }
-.form-control::placeholder {
+.form-control::placeholder :not(textarea) {
     color: var(--font-color);
     box-shadow: 0 19px 38px rgba(0, 0, 0, 0.541), 0 15px 12px rgba(0, 0, 0, 0.562);
+}
+
+textarea::placeholder{
+    color: var(--font-color);
 }
 
 textarea.form-control.info:focus{

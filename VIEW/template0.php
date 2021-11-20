@@ -44,12 +44,12 @@
           <li class="nav-item"><a class="nav-link" href="http://localhost/TCC/user/favoritos" tabindex="-1"><i class="bi bi-heart-fill"></i> Favoritos</a></li>
         </ul>
 
-        <div id="themeColor">
-          <i id="sun" class="bi bi-brightness-low-fill"></i>
-          <i id="moon" class="bi bi-moon-stars-fill"></i>
-        </div>
         <div class=" form-check form-switch">
           <input class="form-check-input" type="checkbox" id="cores">
+          <div id="themeColor">
+            <i id="sun" class="bi bi-brightness-low-fill" style="color: var(--bar-color);"></i>
+            <i id="moon" class="bi bi-moon-stars-fill" style="color: rgb(245, 248, 250);"></i>
+          </div>
         </div>
         <a class="navbar-brand " href="http://localhost/TCC/login/logoff" tabindex="-1" aria-disabled="true">
           Desconectar-se

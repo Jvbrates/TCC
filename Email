@@ -28,14 +28,30 @@ if args.Objetivo == "C":
 
     <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+     <style>div.wrapper {{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-content:center;
+  background-color:#121212;
+  color:white;
+  text-align:center;
+  margin:auto; 
+}}
+
+.title {{
+  color:#1DA1F2;
+}}</style>
     </head>
 
     <body>
-
-    <h1>Cadastrado</h1> 
+    <div clas="wrapper">
+    <h1 class="title">Cadastrado</h1> 
     <p>Nome: {args.Name}</p>
     <p>Nome de Usuário:{args.Username}</p>
     <p>Nome de Usuário:{args.newPassword}</p> 
+    </div>
+    <a href="http://localhost:/TCC/home">Catálogo de Curso</a>
     </body>
     </html>
 
@@ -66,19 +82,37 @@ elif args.Objetivo == "R":
     msg.set_charset("utf-8")
 
     email_content = MIMEText(f"""
-    <html>
+ <html>
 
     <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      
+      <style>div.wrapper {{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-content:center;
+  background-color:#121212;
+  color:white;
+  text-align:center;
+  margin:auto; 
+}}
+
+.title {{
+  color:#1DA1F2;
+}}</style>
     </head>
 
     <body>
-
+    <div class="wrapper">
+      <h1 class="title">Catálogo de Cursos</h1>
     <h1>Nova senha:</h1> 
     <p>{args.newPassword}</p>
-    <p></p>
+    </div>
+       <a href="http://localhost:/TCC/home">Catálogo de Curso</a>
     </body>
     </html>
+
 
 
     """, 'html')
@@ -111,16 +145,34 @@ elif args.Objetivo == "F":
 
     <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      
+      <style>div.wrapper {{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-content:center;
+  background-color:#121212;
+  color:white;
+  text-align:center;
+  margin:auto; 
+}}
+
+.title {{
+  color:#1DA1F2;
+}}</style>
     </head>
 
     <body>
-
+    <div class="wrapper">
+      <h1 class="title">Catálogo de Cursos</h1>
     <h1>Conta não Cadastrada</h1>
-    <p>Este email não possui conta no sistema, faça cadastro ou peça ao administrador.</p> 
-    
+    <p>Este email não possui conta no sistema, faça cadastro ou peça ao administrador.</p> <br>
+      
+    </div>
+      <a href="http://localhost:/TCC/home">Catálogo de Curso</a>
+      <p></p>
     </body>
     </html>
-
 
     """, 'html')
 

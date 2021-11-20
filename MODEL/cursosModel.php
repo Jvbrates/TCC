@@ -65,8 +65,13 @@ class cursosModel
         $read->bindParam(':idtipoCurso', $tipoCurso);
         $read->bindParam(':idCIDADE', $idCidade);
         $read->bindParam(':idInstituicao', $instituicao);
-        $read->execute();
-        return true;
+        try {
+            $read->execute();
+            return true;
+        } catch (\Throwable $th) {
+            return false;
+        }
+        
     }
 
     public function visibilidade($id, $check) //BUG envia dados vazios -- incluir is empty

@@ -151,8 +151,24 @@ class userModel
             $read->bindparam(':idUser', $_SESSION['id']);
             $read->bindparam(':idCurso', $id[0]);
             $read->execute();
-            return true;
+            
         }
+
+        $result = $this->con->prepare('SELECT ativo FROM FAVORITOS WHERE idCurso LIKE :idCurso and idUsuario LIKE :idUser');
+
+        $result->execute();
+
+        if($result->rowCount() != 0){
+            if($result->fetch(PDO::FETCH_ASSOC)['ativo'] != '0'){
+                return true;
+            }
+            else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+
     }
 
     public function newSenha($email, $senha){

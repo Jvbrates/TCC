@@ -38,7 +38,8 @@ submit.addEventListener('click', event => {
 
     data.append('turno', form.getElementsByTagName('select')[0].value);
     data.append('cidade', form.getElementsByTagName('select')[2].value)
-    data.append('instituicao', form.getElementsByTagName('select')[3].value);
+    data.append('instituicao', form.getElementsByTagName('select')[4].value);
+    data.append('tipo', form.getElementsByTagName('select')[3].value);
 
     
 
@@ -55,7 +56,7 @@ submit.addEventListener('click', event => {
             json.map((element) => {
 
                 console.log(element)
-
+                console.log('Aqui ficaria o elemento')
                 let cursoCard = document.createElement('div');
                 cursoCard.classList.add('cursoCard');
                 cursoCard.classList.add('card', 'mb-3');
@@ -79,7 +80,7 @@ submit.addEventListener('click', event => {
                 botao.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor" class="bi bi-arrow-right-square" viewBox="0 0 16 16"> <path fill-rule="evenodd" d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm4.5 5.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/> </svg>';
                 row.onclick = function(){
                     window.location.href = 'http://localhost/TCC/cursos/view/'+element.IdCurso;
-                }
+                } 
                 //Preenche conteudo
                 let nome = document.createElement('h5');
                 nome.classList.add('card-title', 'text-center', 'highlight');
@@ -89,7 +90,7 @@ submit.addEventListener('click', event => {
                 instituicao.textContent = element.INSTITUIÇÂO;
 
                 let modalidade = document.createElement('div');
-
+                console.log('Aqui ficaria o elemento')
                 console.log(element.modalidade)
                 switch (element.modalidade) {
                     case '0':

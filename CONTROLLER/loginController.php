@@ -54,8 +54,8 @@ class loginController extends controller
             if (parent::verifica($_SESSION['user'], $_SESSION['password'])) {
                 $l = new loginCon;
                 $a = $l->getAllData($_SESSION);
-
-                $a['tipo'] = isset($a['tipo']) ? $a['tipo'] : '3';
+                
+                $a['tipo'] = isset($a['tipo']) ? $a['tipo'] : '9';
                 return intval($a['tipo']);
             } else {
                 return 9;

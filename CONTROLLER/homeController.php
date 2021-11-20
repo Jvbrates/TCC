@@ -22,9 +22,11 @@ class homeController extends controller
             if (($loginTipo == 2 || $loginTipo == 1) && $_SERVER['HTTP_REFERER'] == 'http://localhost/TCC/login/login') {
                 header('location:http://localhost/TCC/home/dashboard');
             } else {
+                
                 $this->carregarTemplate(__FUNCTION__, $loginTipo);
             }
         } else {
+            
             $this->carregarTemplate(__FUNCTION__, $loginTipo);
         }
         //echo "chegou em homecontroller index";

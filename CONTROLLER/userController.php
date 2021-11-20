@@ -10,7 +10,7 @@ class userController extends controller
         loginController::redirectLogin(2);
         $a = new userModel();
 
-
+        
         $this->carregarTemplate(__FUNCTION__, $loginTipo, $a->getAll());
     }
 
@@ -34,8 +34,6 @@ class userController extends controller
 
         loginController::redirectLogin(0, 1, 2);
         $a = new userModel();
-
-
         header('Content-Type: application/json');
         echo (json_encode($a->getFull(), JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE));
     }
@@ -106,8 +104,9 @@ class userController extends controller
     }
 
     public function novaSenha(){
+        
         $email = new loginCon();
-        print_r($_POST);
+        
 
         if(!$email->verEmail($_POST['email'])){
             $senha = substr(str_shuffle('ABCDEFGHIJKLMNOPQRSTUVYXWZabcdefghijklmnopqrstuvyxwz0123456789!@#$%¨&*()_+='), 0, 8);
@@ -115,9 +114,11 @@ class userController extends controller
             $l->newSenha($_POST['email'], $senha);
             $command = " ./../Email C jv.belmonterates@gmail.com covid-19 {$_POST['email']} 'n' 'n' {$senha}  > /dev/null 2>/dev/null &";
             shell_exec($command);
+            echo "aaa";
         } else {
             $command = " ./../Email F jv.belmonterates@gmail.com covid-19 '{$_POST['email']}' 'n' 'n' 'n'  > /dev/null 2>/dev/null &";
             shell_exec($command);
+           
             
         }
         exit();

@@ -38,10 +38,12 @@ const nsenha = document.getElementById('formSenha');
 nsenha.addEventListener('submit', el => {
     el.preventDefault()
     let dados = new FormData(nsenha);
+    document.getElementById('senhaModal').click();
     fetch('http://localhost/TCC/user/novaSenha', {
         method: 'POST',
         body: dados
 
     })
+    
 
 })

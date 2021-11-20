@@ -1,3 +1,7 @@
+import { loadCSS, confirma } from '../js/funcoes.js';
+
+loadCSS("css/instituicoes.css");
+
 async function main() {
     await fetch('http://localhost/TCC/user/favoritos/getFav', {
         credentials: 'same-origin'
@@ -37,7 +41,7 @@ async function main() {
             })
         })
 
-    let Checkbox = Array.prototype.slice.call(document.getElementsByClassName('form-check-input'));
+    let Checkbox = Array.prototype.slice.call(document.querySelectorAll('.form-check-input:not(#cores)'));
     Checkbox.map(element => {
         element.addEventListener('click', el => {
             fetch('http://localhost/TCC/user/toggleFav/' + element.id, {

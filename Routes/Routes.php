@@ -42,7 +42,7 @@ class Routes
             count($url) > 0 ? $parameters = $url : null;
 
 
-            print_r($parameters);
+       
         } else { //caso nao seja passado nada na URl
            
             $controller = "homeController";
@@ -51,15 +51,14 @@ class Routes
 
 
         $route = '../CONTROLLER/' . $controller . '.php';
-        //caso a classe requisistada nao exita chamara  a classe home
+        //caso A 
         if(!class_exists($controller)){
             $controller = 'homeController';
         }
-        //Caso o método requisitado não exista chamará o primeiro método 
+       
         if(!method_exists($controller, $metod)){
             $metod = get_class_methods(new $controller)[0];
         }; 
-        //Caso nem a classe nem  método existam chamará homeController->homepage()
         if (!file_exists($route) && !method_exists($controller, $metod)) {
          
          

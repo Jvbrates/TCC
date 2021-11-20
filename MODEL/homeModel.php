@@ -19,9 +19,9 @@ class homeModel
 
         return $dados;
     }
-    public function search($busca="", $cidade="", $modalidade = "", $turno="", $instituicao="")
+    public function search($busca="", $cidade="", $modalidade = "", $turno="", $instituicao="", $tipo="")
     {
-        $sql = 'SELECT c.nomeCurso as "CURSO", INSTITUICAO.nomeInstituicao as "INSTITUIÇÂO" ,CIDADE.nome as "CIDADE", c.IdCurso, c.turno, c.modalidade, c.turno, c.duracao, c.tipoDuracao, c.idtipoCurso, c.idCIDADE, c.idInstituicao, ESTADO.UF as "UF" FROM CURSO c JOIN CIDADE on c.idCIDADE = CIDADE.idCIDADE JOIN INSTITUICAO on c.idInstituicao = INSTITUICAO.idInstituicao JOIN ESTADO on CIDADE.idESTADO = ESTADO.idESTADO WHERE nomeCurso LIKE "%'.$busca.'%" AND c.visivel = 1';
+        $sql = 'SELECT c.nomeCurso as "CURSO", INSTITUICAO.nomeInstituicao as "INSTITUIÇÂO" ,CIDADE.nome as "CIDADE", c.IdCurso, c.turno, c.modalidade, c.turno, c.duracao, c.tipoDuracao, c.idtipoCurso, c.idCIDADE, c.idInstituicao, ESTADO.UF  as "UF", TIPOCURSO.nome FROM CURSO c JOIN CIDADE on c.idCIDADE = CIDADE.idCIDADE JOIN INSTITUICAO on c.idInstituicao = INSTITUICAO.idInstituicao JOIN ESTADO on CIDADE.idESTADO = ESTADO.idESTADO JOIN TIPOCURSO on TIPOCURSO.idTIPOCURSO = c.idtipoCurso WHERE nomeCurso LIKE "%'.$busca.'%" AND c.visivel = 1';
 
        
         
@@ -47,6 +47,12 @@ class homeModel
         if(!empty($instituicao)){
             
             $sql .= " AND c.idInstituicao LIKE ".$instituicao." ";
+            
+        }
+
+        if(!empty($tipo)){
+            
+            $sql .= " AND c.idTIPOCURSO LIKE ".$tipo." ";
             
         }
        

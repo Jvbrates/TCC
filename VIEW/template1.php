@@ -49,6 +49,8 @@
             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <li><a class="dropdown-item" href="http://localhost/TCC/cursos/admin"><i class="bi bi-book-half"></i> Cursos</a></li>
               <li><a class="dropdown-item" href="http://localhost/TCC/instituicoes/"><i class="bi bi-building"></i> Instituições</a></li>
+              <li><a class="dropdown-item" href="http://localhost/TCC/home/dashboard"><i class="bi bi-speedometer"></i> Dasboard</a></li>
+              <li></li>
               <li>
                
             </ul>
@@ -78,7 +80,7 @@
   <main class="row m-0">
 
     <div class="col-3 bar px-5 py-1 dashboard d-none d-lg-block">
-      <a class="btn w-100"><i class="bi bi-speedometer"></i> Dashboard</button>
+      <a href="http://localhost/TCC/home/dashboard" class="btn w-100"><i class="bi bi-speedometer"></i> Dashboard</button>
       <a href="http://localhost/TCC/cursos/admin" class="btn w-100"><i class="bi bi-book-half"></i> Cursos</a>
       <a class="btn w-100" href="http://localhost/TCC/instituicoes/"><i class="bi bi-building"></i> Instituições</button>
       <a class="d-none"></a><!-- Bug se removido desconfigura main -->
